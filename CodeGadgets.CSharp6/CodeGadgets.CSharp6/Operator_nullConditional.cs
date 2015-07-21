@@ -71,8 +71,11 @@ namespace CodeGadgets.CSharp6
 		{
 			InterestingClass ic = new InterestingClass();
 			ic.Collection = new List<InterestingMemberClass>();
+			// In the following line, an object is initialized using named arguments.
 			ic.Collection.Add(new InterestingMemberClass() { FirstName = "Jack", LastName = "Skellington" });
-			ic.Collection.Add(new InterestingMemberClass() { FirstName = "Sally", LastName = "Doll" });
+			// In this line, the direct call to the constructor, using (), is omitted and the object is initialized.
+			// The call to the default constructor is automatically invoked.
+			ic.Collection.Add(new InterestingMemberClass { FirstName = "Sally", LastName = "Doll" });
 
 			return ic.Collection.FirstOrDefault(m => m.FirstName == "Jack")?.FirstName;
 		}
