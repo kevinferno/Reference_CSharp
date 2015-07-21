@@ -11,7 +11,7 @@ namespace CodeGadgets.CSharp.Tests
     public void InterpolatedStringTest()
     {
       var s = new InterpolatedStrings();
-      var res = s.GetInfo();
+      var res = s.GetInfo_NewWay();
       Assert.AreEqual(@"Skellington, Jack 284    1042.97", res);
     }
   }

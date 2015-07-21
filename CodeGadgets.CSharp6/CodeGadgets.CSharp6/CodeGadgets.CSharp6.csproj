@@ -44,11 +44,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Expression_Body_Definitions.cs" />
     <Compile Include="InterpolatedStrings.cs" />
     <Compile Include="Operator_nameof.cs" />
     <Compile Include="Operator_nameof_DependencyPropertyExample.xaml.cs">
       <DependentUpon>Operator_nameof_DependencyPropertyExample.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Operator_nullConditional.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
