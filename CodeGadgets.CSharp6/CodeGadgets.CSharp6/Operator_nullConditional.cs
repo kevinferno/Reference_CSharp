@@ -65,6 +65,17 @@ namespace CodeGadgets.CSharp6
 			// Finally returning the desired property
 			return src?.Collection?[0]?.FirstName;
 		}
+		/// <summary>Linq function FirstOrDefault benefits from null conditional operator, as for reference types, first or default
+		/// return null if no member is found.</summary>
+		public string GetLinqMemberUsingNull()
+		{
+			InterestingClass ic = new InterestingClass();
+			ic.Collection = new List<InterestingMemberClass>();
+			ic.Collection.Add(new InterestingMemberClass() { FirstName = "Jack", LastName = "Skellington" });
+			ic.Collection.Add(new InterestingMemberClass() { FirstName = "Sally", LastName = "Doll" });
+
+			return ic.Collection.FirstOrDefault(m => m.FirstName == "Jack")?.FirstName;
+		}
 	}
 
 	public class InterestingClass
@@ -74,6 +85,7 @@ namespace CodeGadgets.CSharp6
 		public List<InterestingMemberClass> Collection
 		{
 			get { return this._Collection; }
+			set { this._Collection = value; }
 		}
 
 		private List<InterestingMemberClass> _Collection;
